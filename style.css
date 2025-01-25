@@ -1,0 +1,411 @@
+/* Reset and base styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #FFFFFF;
+    color: #2A3335;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+#main {
+    z-index: -2;
+}
+a:hover {
+
+    color: #6d7189;
+}
+
+
+/* Header styles */
+header {
+    background-color: #2A3335;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+/* Style the "Home" link specifically */
+.nav-links a[href="/"] {
+    color: #fff; /* Set the desired color for the Home link */
+    text-decoration: none; /* Optional: Remove underline */
+}
+
+.nav-links a[href="/"]:hover {
+    color: #bebebe; /* Optional: Change color on hover */
+    text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+
+
+
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 70px 20px;
+    background-color: #0A5EB0;
+    border-bottom: 5px solid #2A3335;
+}
+.hero h1 {
+    color: #FFFFFF; /* Set the desired color for the main title */
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #FFFFFF; /* Set the desired color for the subtitle text */
+    font-size: 1.2em; /* Optional: Adjust the font size */
+    margin-top: 0; /* Optional: Remove default margin */
+}
+
+.downward-arrow {
+    font-size: 3em; /* Size of the arrow */
+    color: #4e92df; /* Color of the arrow */
+    margin-top: 20px; /* Add some space above the arrow */
+    animation: bounce 1.5s infinite; /* Optional: Add a bounce animation */
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px); /* Move down by 10px */
+    }
+}
+
+
+
+
+
+
+/* About section */
+.about {
+    padding: 40px 20px;
+    background-color: #0d1b2a; /* Optional: Use a background color to differentiate */
+    color: #fff; /* Text color */
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between the image and text */
+    max-width: 1200px;
+    margin: 0 auto; /* Center the content */
+}
+
+.about-image {
+    width: 17%; /* Adjust image size */
+    max-width: 300px;
+    border-radius: 10px; /* Add rounded corners to the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow for better visuals */
+}
+
+.about-text {
+    flex: 1; /* Make the text take the remaining space */
+}
+
+.about-text h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #4e92df; /* Highlighted color for the heading */
+}
+
+.about-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+
+
+
+
+
+
+
+/* Projects section */
+.projects {
+    padding: 50px 20px;
+    background: transparent;
+    z-index: -1;
+}
+
+.project-grid {
+    z-index: -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    background: transparent;
+
+}
+
+
+
+.project-card {
+    position: relative;
+    padding: 30px 50px;
+    margin: 20px;
+    background: #dddddd;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #1f76cc, #813cff);
+    filter: blur(0px);
+  }
+
+
+
+
+  .project-card h3 {
+    position: relative;
+
+    margin: 0;
+    color: #333;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+
+  }
+
+
+.project-card h3 {
+    margin-top: 0;
+}
+
+/* Add this block to style the "Projects" title */
+.projects h2 {
+    color: #2A3335; /* Change to your desired color, e.g., dark blue */
+    font-size: 2em; /* Optional: Adjust font size */
+    margin-bottom: 10px; /* Optional: Add spacing */
+}
+
+
+
+/* Project Detail */
+.project-detail {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+
+/* Footer styles */
+footer {
+    background-color: #2A3335;
+    padding: 20px;
+    height: 50px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+
+
+
+
+
+
+/* Calculator Container */
+.calculator {
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2A3335;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Calculator Display */
+#calculator-display {
+    width: 92%;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    font-size: 2em;
+    text-align: right;
+    background-color: #454852;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Calculator Buttons */
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.calculator-buttons button {
+    font-size: 1.2em;
+    background-color: #0A5EB0;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.calculator-buttons button:hover {
+    background-color: #1f77d0;
+}
+
+
+
+
+/* Snake game*/
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+}
+
+#game-canvas {
+    background-color: #2A3335;
+    border: 2px solid #0A5EB0;
+}
+
+#start-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #0A5EB0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#start-button:hover {
+    background-color: #3589dd;
+}
+
+#game-over-message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: red;
+    display: none;
+}
+
+
+
+
+/* Password checker */
+#password-checker-container {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 20px;
+    border: 2px solid #4e92df;
+    border-radius: 10px;
+    background-color: #f4f4f9;
+}
+
+#password-checker-container input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+#password-strength {
+    margin-top: 10px;
+    font-size: 180px;
+    font-weight: bold;
+}
+
+#password-crack-time {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+
+
+/* Simple Password checker */
+#password-checker-container {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 20px;
+    border: 2px solid #4e92df;
+    border-radius: 10px;
+    background-color: #f4f4f9;
+}
+
+#password-checker-container input {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+#password-strength {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Show button */
+#toggle-password {
+    border: none;
+    background: none;
+    color: #4e92df;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    transform: translateY(-50%);
+    margin-top: 10px;
+    position: absolute;
+}
+
+#toggle-password:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
