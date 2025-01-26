@@ -21,7 +21,7 @@ button {
 
 #timer-display {
   font-size: 60px;
-  margin: 20px 0;
+  margin-top: 25px;
 }
 
 .active {
