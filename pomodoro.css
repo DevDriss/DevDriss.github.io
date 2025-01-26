@@ -1,0 +1,186 @@
+/* POMODORO TIMER */
+#pomodoro-page {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 50px;
+}
+
+#top-buttons button, #bottom-buttons button{
+  border-radius: 8px;
+  background-color: #dddddd;
+  border: none;
+}
+
+
+
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+#timer-display {
+  font-size: 60px;
+  margin: 20px 0;
+}
+
+.active {
+  background-color: #207ad4 !important; 
+  color: white;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#settings-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+#settings-window {
+  position: fixed;
+  background: white;
+  border: 2px solid #c4d1e2;
+  padding: 15px;
+  border-radius: 10px;
+
+  text-align: center;
+}
+
+.input-time {
+  padding: 5px;
+  font-size: 18px;
+}
+
+#settings-save-close {
+  padding: 10px;
+}
+
+#time-minutes {
+  color: #8f8f8f;
+}
+
+#settings-title { 
+  padding: 0px;
+}
+
+input {
+  background-color: #e9e9e9;
+  font-size: 16px;
+  padding: 6px;
+  border: none;
+  border-radius: 10px;
+}
+
+
+/*
+#pomodoro-explanation {
+  margin-top: 40px;
+  position: relative;
+  background-color: #ebebeb;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid #207ad4;
+
+}
+
+#pomodoro-explanation:before {
+    content: "";
+    position: absolute;
+    color: black;
+    background: linear-gradient(#0044ff, #3700ff);
+    width: 110%;
+    height: 110%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 10px;
+
+}
+*/
+
+#pomodoro-explanation {
+  background-color: #dddddd;
+  border: solid #207ad4 2px;
+  padding: 20px;
+  margin: 30px;
+  border-radius: 10px;
+  }
+
+
+
+/* BUTTON */
+.button-container {
+    margin-top: 30px;
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+
+}
+
+.button-container:before {
+    content: '';
+    background: linear-gradient(45deg, #6200ff, #1900ff, #006eff, #00aeff, #006eff, #1900ff);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    border: none;
+}
+
+.button-container:active {
+  color: #000
+}
+
+.button-container:active::after {
+  background: transparent;
+}
+
+.button-container:hover:before {
+    opacity: 1;
+}
+
+.button-container:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #dddddd;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    border: none;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
