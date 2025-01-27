@@ -110,6 +110,8 @@ header .logo {
     padding: 40px 20px;
     background-color: #0d1b2a; /* Optional: Use a background color to differentiate */
     color: #fff; /* Text color */
+    text-align: left;
+
 }
 
 .about-container {
