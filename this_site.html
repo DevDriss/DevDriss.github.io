@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>DevDriss</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+        select {
+            margin-right: 10px;
+        }
+    </style>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Driss Landou</div>
+            <ul class="nav-links">
+                <li><a href="/">Menu</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Traduction (ne marche pas encore)</h1>
+    <div>
+        <select id="sourceLang">
+            <option value="fr">Français</option>
+        </select>
+        <select id="targetLang">
+            <option value="en">Anglais</option>
+        </select>
+    </div>
+    <textarea id="sourceText" placeholder="Entrere texte à traduire"></textarea>
+    <button id="translateBtn">Translate</button>
+    <textarea id="translatedText" readonly placeholder="Texte traduit"></textarea>
+
+    <p>API Request:</p>
+    <div style="background-color: #bbb;">
+<p>const res = await fetch("https://api-free.deepl.com/v2/translate", {<br>
+	method: "POST",<br>
+	body: JSON.stringify({<br>
+		q: "",<br>
+		source: "auto",<br>
+		target: "en",<br>
+		format: "text",<br>
+		api_key: ""<br>
+	}),<br>
+	headers: { "Content-Type": "application/json" }<br>
+});</p>
+    </div>
+
+    <script>
+       
+document.getElementById('translateBtn').addEventListener('click', async () => {
+const apiKey = "dd094ff4-beb0-4fe9-a298-e5f3ffc36c96:fx";
+const url = "https://api-free.deepl.com/v2/translate";
+
+const data = new URLSearchParams();
+data.append("auth_key", apiKey);
+data.append("text", "je suis en bas");
+data.append("target_lang", "EN");
+
+fetch(url, {
+    method: "POST",
+    body: data
+})
+.then(response => response.json())
+.then(result => console.log(result.translations[0].text))
+.then(result => dolument.getElementById("translatedText").value = result.translations[0].text)
+.catch(error => console.error("Error:", error));
+})
+
+    </script>
+</body>
+</html>
