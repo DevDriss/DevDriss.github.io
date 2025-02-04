@@ -252,7 +252,7 @@ footer {
 
 /* Carousel */
 
-.gallery {
+/* .gallery {
     padding: 1rem;
 	display: grid;
 	grid-template-columns: repeat(10, 80vw);
@@ -266,20 +266,37 @@ footer {
     
 }
 
-.active {
-	scroll-snap-type: unset;
-}
 
 .gallery li {
 	scroll-snap-align: center;
 	display: inline-block;
 	border-radius: 3px;
 	font-size: 0;
-
+    width: 50%;
+    
+    } */
+    
+    
+    .gallery {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto; 
+        padding: 0;
+    list-style: none;
+    justify-content: center;
 }
 
-
-
+.active {
+    scroll-snap-type: unset;
+}
+.gallery li {
+    width: 400px;
+    height: 500px;
+    flex-shrink: 0; 
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
 
 
 
