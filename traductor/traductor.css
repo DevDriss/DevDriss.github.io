@@ -1,0 +1,228 @@
+/* Traductor */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #FFFFFF;
+    color: #2A3335;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+#main {
+    z-index: -2;
+    text-align: center;
+}
+
+a:hover {
+
+    color: #6d7189;
+}
+
+header {
+    background-color: #2A3335;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+
+.nav-links a[href="/"] {
+    color: #fff; 
+    text-decoration: none; 
+}
+
+.nav-links a[href="/"]:hover {
+    color: #bebebe; 
+    text-decoration: underline; 
+}
+/* End of common css */
+
+
+
+
+
+
+
+/* Start of specific css */
+
+#sourceText {
+    margin: 20px;
+    margin-top: 0px;
+    padding: 30px;
+    border-radius: 10px;
+    font-size: 22px;
+}
+
+#translatedText {
+    margin: 20px;
+    margin-top: 0px;
+    font-size: 22px;
+    padding: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #e9e9e9;
+    
+}
+ 
+.button {
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #e9e9e9;
+    text-align: center;
+    margin: 3px; 
+}
+.button:hover {
+    background-color: #cacaca;
+    cursor: pointer;
+}
+
+.button:active {
+    background-color: #a1a1a1;
+}
+
+.traductionText {
+    width: 80%;
+    max-width: 800px;
+    height: 100px;
+}
+
+
+
+textarea {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+textarea {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+}
+select {
+    margin-right: 10px;
+}
+
+
+.code_request {
+    background-color: #1f1f1f;
+    padding-bottom: 20px;
+    margin: 15px;
+    margin-left: 5%;
+    overflow-x: auto;
+    border-radius: 15px;
+    white-space: pre;
+    font-family: monospace;
+    color: #ffffff;
+    font-size: 14px;
+    max-width: 750px;
+}
+
+h2 {
+    margin: 0;
+    margin-left: 20px;
+    color: white;
+}
+
+.responseAndComment {
+    background-color: #1f1f1f;
+    margin: 15px;
+    margin-left: 5%;
+    padding: 30px;
+    border-radius: 15px;
+    font-family: monospace;
+    font-size: 14px;
+    max-width: 750px;
+ }
+
+.responseAndComment p {
+    color: #55a862;
+    padding-left: 40px;
+}
+
+#code_response {
+    color: orange;
+    padding-left: 40px;
+}
+
+.code_request .dark_blue {
+    color: #569CD6; 
+}
+
+.code_request .blue {
+    color: #47bfff;
+}
+
+.code_request .changing {
+    text-decoration: underline;
+}
+
+.code_request .brown {
+    color: #CE9178;
+}
+
+.code_request .light_yellow {
+    color: #DCDCAA; 
+}
+
+.code_request .green {
+    color: #4EC9B0; 
+}
+
+.code_request .commentGreen {
+    color: #55a862; 
+}
+
+.code_request .light_blue {
+    color: #9CDCFE;
+}
+
+.code_request .pink {
+    color: #db8cff;
+}
+
+.code_request .yellow {
+    color: #ffec3c;
+}
+
+
+
+#speakButton {
+    padding: 20px;
+    margin: 30px;
+}
+
+.speaker {
+    display: flex;
+    height: 35px;
+}
+#speakerBtn {
+    border: 1px solid black;
+    border-radius: 45px;
+    text-align: center;
+    margin: 3px;
+}
