@@ -226,3 +226,11 @@ h2 {
     text-align: center;
     margin: 3px;
 }
+#speakerBtn:hover{
+    background-color: #cacaca;
+}
+
+#speakerBtn:active{
+    background-color: #a1a1a1;
+}
+
