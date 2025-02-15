@@ -444,4 +444,55 @@ footer {
 
 
 
+/* Traductor */
+
+.code_request {
+    background-color: #1f1f1f;
+    
+    margin: 30px;
+    overflow-x: auto;
+    white-space: pre;
+    border-radius: 15px;
+    font-family: monospace;
+    color: #ffffff;
+    font-size: 14px;
+}
+#code_response {
+    color: orange;
+}
+
+
+
+.code_request .dark_blue {
+    color: #569CD6; 
+}
+
+.code_request .blue {
+    color: #47bfff;
+}
+
+.code_request .brown {
+    color: #CE9178;
+}
+
+.code_request .light_yellow {
+    color: #DCDCAA; 
+}
+
+.code_request .green {
+    color: #4EC9B0; 
+}
+
+.code_request .light_blue {
+    color: #9CDCFE;
+}
+
+.code_request .pink {
+    color: #db8cff;
+}
+
+.code_request .yellow {
+    color: #ffec3c;
+}
+
 
