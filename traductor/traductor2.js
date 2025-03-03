@@ -1,4 +1,6 @@
-const sourceLang = document.getElementById("sourceLang").value
+// const e = require("express");
+
+// const sourceLang = document.getElementById("sourceLang").value
 
 
 
@@ -28,27 +30,46 @@ function switchLang() {
     } else {alert("Can't switch language when source language is 'Detecte Language'.");}
 };
 
-
-
-// Example usage:
-function textSpeech() {
-    const translatedText = document.getElementById("translatedText").value;
-    const languageCode = document.getElementById("targetLang").value;
-    speakText(translatedText, languageCode);
-};
-
 function copyText() {
     navigator.clipboard.writeText(document.getElementById("translatedText").value)
 };
 
-function speakText(text, lang = "en-US") {
-    let speech = new SpeechSynthesisUtterance();
-    speech.text = text;
-    speech.lang = lang;
-    speech.rate = 1;
-    speech.volume = 1;
-    speech.pitch = 1;
 
+// Speaker
+function textSpeech() {
+    const textSpeaker = document.getElementById("translatedText").value;
+    const langSpeaker = document.getElementById("targetLang").value;
+
+    if (langSpeaker=="JA"|langSpeaker=="RU"|langSpeaker=="ZH"|langSpeaker=="AR") {
+        alert("Language supported by Text-to-Speech: French, English, Italian, Dutch, German, Spanish.");
+        return};
+
+        let speech = new SpeechSynthesisUtterance();
+        speech.text = textSpeaker;
+        speech.lang = langSpeaker;
+        speech.rate = 1;
+        speech.volume = 1;
+        speech.pitch = 1;
     window.speechSynthesis.speak(speech);
-}
+    };
+    
 
+
+function fileTranslation(e) {
+    const file = e.target.files[0];       // puts file in var file
+// yo need to write [0] cause files refers to the list of files from the input (idk why)
+    if (!file) {
+        alert("You did not upload any file.")};
+    
+    const reader = new FileReader();      // makes object that read the file
+    reader.onload = function(x) {       // defines function that will run when obj is initialized
+        const content = x.target.result;  // puts content of file in a var (x is the file)
+        console.log(content)               
+        document.getElementById("sourceText").value = content
+        translating()
+    };
+    reader.readAsText(file)      // this initiallizes the object that reads the file
+// , which launches the onload function
+    const fileName = e.target.files[0]?.name || 'No document selected';
+    document.querySelector('.custom-file-label').textContent = fileName
+}
