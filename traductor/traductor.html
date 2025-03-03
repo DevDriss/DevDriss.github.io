@@ -17,9 +17,10 @@
                 <li><a href="/">Menu</a></li>
             </ul>
         </nav>
+        <img src="../assets/darkmode_icon.png" id="dark-mode" onclick="darkMode()" style="height: 35px;">
     </header>
 
-    <h1 style="margin-left: 20px;">Traduction</h1>
+    <h1 style="margin-left: 20px;">Translator<br>(difficulty for me: <span style="color: orange;">medium</span>)</h1>
 
     <div style="display: flex; margin-left: 30px; max-width: 1000px;">
         <select id="sourceLang" class="button">
@@ -40,7 +41,8 @@
     </div>
     <textarea id="sourceText" class="traductionText" onkeydown="requestTimer()" placeholder="Entrer texte à traduire"></textarea>
     
-    <div style="display: flex; margin-left: 30px;">
+        
+        <div style="display: flex; margin-left: 30px;">
             <select id="targetLang" class="button" onchange="translating()">
                 <option value="EN">Anglais</option>
                 <option value="FR">French</option>
@@ -56,12 +58,19 @@
             <button onclick="copyText()" class="button">Copy Translation to Clipboard</button>
             <button id="speakerBtn" title="Text to Speech"><img src="../assets/speaker_photoshop3.png" alt="Click for Text to Speech" onclick="textSpeech()" class="speaker"></button>
         </div>
-    <textarea id="translatedText" class="traductionText" readonly placeholder="Texte traduit"></textarea>
-    
-    
-    <div class="code_request">
-    <H2>  Real-Time API Request:</H2>
-    <code>
+        <textarea id="translatedText" class="traductionText" readonly placeholder="Texte traduit"></textarea>
+        
+        <div id="file-container">
+            <h4 id="text-upload">Or click here to select a file to translate:</h4>
+            <div id="fileBtn">
+                <input type="file" id="file-input" accept=".txt" onchange="fileTranslation(event)">
+                <label for="file" class="custom-file-label">Select a Text File</label>
+            </div>
+        </div>
+        
+        <div class="code_request">
+            <H2>  Real-Time API Request:</H2>
+            <code>
         <span class="dark_blue">const</span> <span class="blue">url</span> = <span class="brown">"https://api-free.deepl.com/v2/translate"</span>;
         <span class="dark_blue">const</span> <span class="blue">response</span> = <span class="pink">await</span> <span class="light_yellow">fetch</span><span class="blue">(</span><span class="blue">url</span>, <span class="yellow">{</span>
             <span class="light_blue">method</span>: <span class="brown">"POST"</span>,
@@ -110,6 +119,7 @@
 
     <script src="traductor.js"></script>
     <script src="traductor2.js"></script>
+    <script src="../darkMode.js"></script> 
 </body>
 </html>
 
