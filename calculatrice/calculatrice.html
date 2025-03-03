@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,6 @@
     <title>DevDriss</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
-
 </head>
 
 <body>
@@ -16,12 +15,15 @@
         <div class="logo">Driss Landou</div>
         <ul class="nav-links">
             <li><a href="/">Menu</a></li>
+            
         </ul>
     </nav>
+    <img src="../assets/darkmode_icon.png" id="dark-mode" onclick="darkMode()" style="height: 35px;">
 </header>
 
 <section class="project-detail">
-    <h1>Calculatrice</h1>
+    <h1 style="margin-top: 0px;">Calculator<br>(difficulty for me: <span style="color: rgb(200, 214, 0);">easy-medium</span>)</h1>
+
 
     <div class="calculator">
         <input type="text" id="calculator-display" readonly placeholder="0">
@@ -49,10 +51,9 @@
         </div>
     </div>
     <script src="calculatrice.js"></script>
+    <script src="../darkMode.js"></script>
+
 </section>
 
 </body>
 </html>
-
-
-
