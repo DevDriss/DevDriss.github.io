@@ -1,28 +1,30 @@
 <!DOCTYPE HTML>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevDriss</title>
-    <link rel="stylesheet" href="../style.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DevDriss</title>
+        <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
 
-
+    
 </head>
 
 <body>
-
-<header>
-    <nav>
-        <div class="logo">Driss Landou</div>
-        <ul class="nav-links">
-            <li><a href="/">Menu</a></li>
-        </ul>
-    </nav>
+    
+    <header>
+        <nav>
+            <div class="logo">Driss Landou</div>
+            <ul class="nav-links">
+                <li><a href="/">Menu</a></li>
+            </ul>
+        </nav>
+        <img src="../assets/darkmode_icon.png" id="dark-mode" onclick="darkMode()" style="height: 35px;">
 </header>
+<p id="outputt"></p>
 
 <section class="project-detail">
-        <h1>Snakes</h1>
+    <h1 style="margin-top: 0px;">Snake Game<br>(difficulty for me: <span style="color: rgb(200, 214, 0);">easy-medium</span>)</h1>
         
         <div id="game-container">
             <canvas id="game-canvas"></canvas>
@@ -30,11 +32,11 @@
             <div id="game-over-message"></div>
         </div>
         <script src="snake-game.js"></script>
-
+        <script src="../darkMode.js"></script>
+        
     </section>
-
-
-
+    
 </body>
 </html>
+
 
