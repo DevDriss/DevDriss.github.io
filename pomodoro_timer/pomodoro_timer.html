@@ -18,14 +18,17 @@
                 <li><a href="/">Menu</a></li>
             </ul>
         </nav>
+        <img src="../assets/darkmode_icon.png" id="dark-mode" onclick="darkMode()" style="height: 35px;">
     </header>
 
     <section class="project-detail">
 
+            <h1 style="margin-top: 0px;">Pomodoro Timer <br>(difficulty for me: <span style="color: orange;">medium</span>)</h1>
+
         <div id="top-buttons"> 
             <button id="pomodoro-btn" class = "active">Pomodoro</button>
-            <button id="short-break-btn"class = "">Short Break</button>
-            <button id="long-break-btn" class = "">Long Break</button>
+            <button id="short-break-btn"class = "">Pause Courte</button>
+            <button id="long-break-btn" class = "">Pause Longue</button>
         </div>
 
         <div id="timer-display"></div>
@@ -33,8 +36,8 @@
         <div id="bottom-buttons">
             <button id="play-btn" class="button-container" style="margin-bottom: 10px;">Play</button>
             <br>
-            <button id="reset-btn">Reset</button>
-        <button id="settings-btn">Settings</button>
+            <button id="reset-btn">Réinitialiser</button>
+        <button id="settings-btn">Paramètres</button>
         </div>
 
         <div id="settings-container" class="hidden">
@@ -86,7 +89,7 @@
 
 
         <script src="pomodoro.js"></script>
-
+        <script src="../darkMode.js"></script>
     </section>
 
 
