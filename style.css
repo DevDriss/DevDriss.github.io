@@ -1,11 +1,22 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #2A3335;
+}
 
 body, html {
     margin: 0;
     padding: 0;
+    height: 100%;
     font-family: 'Arial', sans-serif;
-    background-color: #FFFFFF;
-    color: #2A3335;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
+
+.dark-mode {
+--bg-color: #2A3335;
+--text-color: #fff !important;
+}
+
 
 a {
     color: #000000;
@@ -25,7 +36,7 @@ a:hover {
 
 
 header {
-    background-color: #2A3335;
+    background-color: #202729;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -157,6 +168,7 @@ header .logo {
     padding: 50px 20px;
     background: transparent;
     z-index: -1;
+    background-color: var(--bg-color);
 }
 
 .project-grid {
@@ -212,7 +224,6 @@ header .logo {
 
 
 .projects h2 {
-    color: #2A3335;
     font-size: 2em;
     margin-bottom: 10px;
 }
