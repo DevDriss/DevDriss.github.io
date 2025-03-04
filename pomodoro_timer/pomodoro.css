@@ -1,4 +1,26 @@
-/* POMODORO TIMER */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #2A3335;
+  --text-area: #fff;
+  --second-text-color: #2A3335;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.dark-mode {
+  --bg-color: #2A3335;
+  --text-color: #fff !important;
+  --text-area: #c4c4c4;
+  --second-bg-color: #2A3335;
+}
+
+
 #pomodoro-page {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -10,8 +32,6 @@
   background-color: #dddddd;
   border: none;
 }
-
-
 
 
 button {
@@ -115,6 +135,7 @@ input {
   padding: 20px;
   margin: 30px;
   border-radius: 10px;
+  color: var(--second-text-color);
   }
 
 
