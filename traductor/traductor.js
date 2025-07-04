@@ -9,7 +9,7 @@ async function translating() {
         const url = `https://api.mymemory.translated.net/get?q=
             ${encodeURIComponent(input)}&langpair=${langPair}`; // actual request (no up P for the after &)
         
-        // Log the request§
+        // log request§
         
         console.log("=== MyMemory translation request ===");
         console.log("input text:", input);
