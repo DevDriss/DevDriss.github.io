@@ -14,21 +14,21 @@ let direction = { x: 0, y: 0 };
 let gameInterval;
 let speed = 200;
 
-// Function to generate a random grid position not on the snake
+// function generate random grid position not on snake
 function randomGridPosition() {
     let position;
     let isOnSnake;
 
     do {
-        // Generate a random position
+        // generate random position
         position = {
             x: Math.floor(Math.random() * (canvas.width / gridSize)) * gridSize,
             y: Math.floor(Math.random() * (canvas.height / gridSize)) * gridSize
         };
 
-        // Check if the position is on the snake
+        // check if the position is on snake
         isOnSnake = snake.some(segment => segment.x === position.x && segment.y === position.y);
-    } while (isOnSnake); // Keep generating until the position is not on the snake
+    } while (isOnSnake); // keep generating until position not on snake
 
     return position;
 }
@@ -39,13 +39,13 @@ function drawRect(x, y, color) {
 }
 
 function drawGame() {
-    // Clear canvas
+    //clear
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Draw food
+    //draw food
     drawRect(food.x, food.y, 'red');
 
-    // Draw snake
+    // draw snake
     snake.forEach(segment => drawRect(segment.x, segment.y, 'green'));
 }
 
@@ -53,23 +53,23 @@ function moveSnake() {
     const head = { x: snake[0].x + direction.x * gridSize, y: snake[0].y + direction.y * gridSize };
     snake.unshift(head); // Add new head
 
-    // Check if the snake eats the food
+    // check if the snake eats food
     if (head.x === food.x && head.y === food.y) {
-        food = randomGridPosition(); // Respawn food
+        food = randomGridPosition(); // respawn food squaare
     } else {
-        snake.pop(); // Remove the tail
+        snake.pop(); // remove tail
     }
 }
 
 function checkCollision() {
     const head = snake[0];
 
-    // Check if snake hits walls
-    if (head.x < 0 || head.x >= canvas.width || head.y < 0 || head.y >= canvas.height) {
+    // check if snake hits side
+if (head.x < 0 || head.x >= canvas.width || head.y < 0 || head.y >= canvas.height) {
         endGame();
     }
 
-    // Check if snake hits itself
+    //check if snake hits itself
     for (let i = 1; i < snake.length; i++) {
         if (head.x === snake[i].x && head.y === snake[i].y) {
             endGame();
@@ -77,32 +77,28 @@ function checkCollision() {
     }
 }
 
-function endGame() {
-    clearInterval(gameInterval);
+function endGame() {clearInterval(gameInterval);
     gameOverMessage.textContent = 'Game Over!';
     gameOverMessage.style.display = 'block';
     startButton.style.display = 'block'; // Show start button again
 }
 
-function updateGame() {
-    moveSnake();
-    checkCollision();
+function updateGame() {moveSnake();checkCollision();
     drawGame();
 }
 
 function startGame() {
-    // Reset game variables
-    snake = [{ x: 200, y: 200 }];
-    direction = { x: 0, y: 0 };
+    // reset variables
+    snake = [{ x: 200, y: 200 }];direction = { x: 0, y: 0 };
     food = randomGridPosition();
     gameOverMessage.style.display = 'none';
     startButton.style.display = 'none';
 
-    // Start game loop
     gameInterval = setInterval(updateGame, speed);
 }
 
-// Event Listeners
+//listeners
+
 document.addEventListener('keydown', event => {
     switch (event.key) {
         case 'ArrowUp':
@@ -119,5 +115,4 @@ document.addEventListener('keydown', event => {
             break;
     }
 });
-
 startButton.addEventListener('click', startGame);
