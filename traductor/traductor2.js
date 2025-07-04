@@ -58,8 +58,7 @@ function textSpeech() {
 function fileTranslation(e) {
     const file = e.target.files[0];       // puts file in var file
 // yo need to write [0] cause files refers to the list of files from the input (idk why, but there you go)
-    if (!file) {
-        alert("You did not upload any file.")};
+    if (!file) {alert("You did not upload any file.")};
     
     const reader = new FileReader();      // makes object that read the file
     reader.onload = function(x) {       // defines function that will run when obj is initialized
