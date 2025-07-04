@@ -21,7 +21,7 @@ const save_settings_button = document.getElementById("save-settings-btn")
 
 
 function update_timer(mode) {
-    minutes = Math.floor(remainingTime / 60);
+    minutes = Math.floor(remainingTime / 60); //floor: rounds the the lower round num
     seconds = (remainingTime % 60).toString().padStart(2, "0");
     document.getElementById("timer-display").innerHTML = `${minutes}:${seconds}`;
 
