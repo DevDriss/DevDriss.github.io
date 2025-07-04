@@ -24,37 +24,38 @@
 
     <div style="display: flex; margin-left: 30px; max-width: 1000px;">
         <select id="sourceLang" class="button">
-            <option value="">Detect Language</option>
-            <option value="EN">Anglais</option>
-            <option value="FR">French</option>
-            <option value="DE">German</option> 
-            <option value="ES">Spanish</option>
-            <option value="IT">Italian</option>
-            <option value="JA">Japanase</option>
-            <option value="NL">Dutch</option>
-            <option value="RU">Russian</option>
-            <option value="ZH">Chinese</option>
-            <option value="AR">Arabic</option>
+            <option value="fr">French</option>
+            <option value="en">English</option>
+            <option value="de">German</option> 
+            <option value="es">Spanish</option>
+            <option value="it">Italian</option>
+            <option value="ja">Japanase</option>
+            <option value="nl">Dutch</option>
+            <option value="ru">Russian</option>
+            <option value="zh">Chinese</option>
+            <option value="ar">Arabic</option>
+            <option value="auto">Detect Language</option>
         </select>
+
         <button onclick="eraseText()" class="button">Erase</button>
         <button onclick="switchLang()" class="button">Switch Languages</button>
     </div>
     <textarea id="sourceText" class="traductionText" onkeydown="requestTimer()" placeholder="Entrer texte à traduire"></textarea>
-    
+
         
         <div style="display: flex; margin-left: 30px;">
-            <select id="targetLang" class="button" onchange="translating()">
-                <option value="EN">Anglais</option>
-                <option value="FR">French</option>
-                <option value="DE">German</option> 
-                <option value="ES">Spanish</option>
-                <option value="IT">Italian</option>
-                <option value="JA">Japanase</option>
-                <option value="NL">Dutch</option>
-                <option value="RU">Russian</option>
-                <option value="ZH">Chinese</option>
-                <option value="AR">Arabic</option>
-            </select>
+    <select id="targetLang" class="button" onchange="translating()">
+        <option value="en">English</option>
+        <option value="fr">French</option>
+        <option value="de">German</option> 
+        <option value="es">Spanish</option>
+        <option value="it">Italian</option>
+        <option value="ja">Japanese</option>
+        <option value="nl">Dutch</option>
+        <option value="ru">Russian</option>
+        <option value="zh">Chinese</option>
+        <option value="ar">Arabic</option>
+    </select>
             <button onclick="copyText()" class="button">Copy Translation to Clipboard</button>
             <button id="speakerBtn" title="Text to Speech"><img src="../assets/speaker_photoshop3.png" alt="Click for Text to Speech" onclick="textSpeech()" class="speaker"></button>
         </div>
@@ -70,23 +71,20 @@
         
         <div class="code_request">
             <H2>  Real-Time API Request:</H2>
-            <code>
-        <span class="dark_blue">const</span> <span class="blue">url</span> = <span class="brown">"https://api-free.deepl.com/v2/translate"</span>;
-        <span class="dark_blue">const</span> <span class="blue">response</span> = <span class="pink">await</span> <span class="light_yellow">fetch</span><span class="blue">(</span><span class="blue">url</span>, <span class="yellow">{</span>
-            <span class="light_blue">method</span>: <span class="brown">"POST"</span>,
-            <span class="light_blue">body</span>: <span class="dark_blue">new</span> <span class="green">URLSearchParams</span><span class="pink">(</span><span class="blue">{</span>
-                <span class="light_blue">auth_key:</span> <span class="blue">key</span>,
-                <span class="light_blue">text:</span> <span class="blue changing" id="code_input">...</span>,
-                <span class="light_blue">target_lang:</span> <span class="blue changing" id="code_target_lang">...</span>,
-                <span class="light_blue">source_lang:</span> <span class="blue changing" id="code_source_lang">...</span>
-            <span class="blue">}</span><span class="pink">)</span> <span class="commentGreen">// The underlined code here and the</span>
-        <span class="yellow">}</span><span class="blue">)</span>;    <span class="commentGreen">// reponse bellow change when you translate something.</span>
+    <code>
+        <span class="dark_blue">const</span> <span class="blue">url</span> = <span class="brown">`https://api.mymemory.translated.net/get?q=</span>
+            <span class="yellow">${</span><span class="light_yellow">encodeURIComponent</span><span class="blue">(</span><span class="blue changing" id="code_input">...</span><span class="blue">)</span><span class="yellow">}</span><span class="brown">&langpair=</span><span class="yellow">${</span><span class="blue changing" id="code_langpair">...</span><span class="yellow">}</span><span class="brown">`</span>;
+            <span class="green">// The underlined code here and the</span>
+                <span class="green">// reponse bellow change when you translate something.</span>
+        <span class="dark_blue">const</span> <span class="blue">response</span> = <span class="pink">await</span> <span class="light_yellow">fetch</span><span class="blue">(</span><span class="blue">url</span><span class="blue">)</span>; <span class="commentGreen"></span>
+        <span class="dark_blue">const</span> <span class="blue">data</span> = <span class="pink">await</span> <span class="blue">response</span>.<span class="light_yellow">json</span><span class="blue">()</span>;
+        <span class="blue">document</span>.<span class="light_yellow">getElementById</span><span class="blue">(</span><span class="brown">"translatedText"</span><span class="blue">)</span>.<span class="blue">innerHTML</span> = <span class="blue">jsonResponse</span>.<span class="blue">responseData</span>.<span class="blue">translatedText</span>; <span class="commentGreen"></span>        
     </code>
 </div>
 
 <div class="responseAndComment code_response">
     <H2>Response:</H2>
-<div id="code_response">Traduct something to get a response from DeepL.</div>
+<div id="code_response">Traduct something to get a response from MyMemory.</div>
 </div>
 
 <div class="responseAndComment comment">
@@ -101,13 +99,6 @@
     This makes it so that when typing a word or phrase, only one (or only a few) request is
     being sent when the user stops typing.--&gt;</p>
 
-    <p>    &lt;!-- I know that putting an API key in the frontend is a security mistake,
-    but given that for the moment, I am constrained to a static 
-    website, this is the only way.I am in the process of setting 
-    up a server on a respberry pi that I just bought, and I will
-    try to setup a way to securely fetch the key from it, 
-    using environment variables.--&gt;
-    </p>
     <p>    &lt;!-- I made the request code look like just how it would look in VS Code
     by giving a class to every singe word, and coloring that class with CSS. I used the 
     CSS property white-space: pre; to keep the indents and the 
