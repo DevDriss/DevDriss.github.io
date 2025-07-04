@@ -1,17 +1,16 @@
-// Variables to hold the current state
+//vqriables to hold current state
 let currentNumber = '';
 let previousNumber = '';
 let operator = null;
-
-// Append a number to the current input
+// Appends number to  input
 function appendNumber(number) {
     currentNumber += number;
     updateDisplay();
 }
 
-// Set the operator for the calculation
+//set operator for calculation, af
 function setOperator(op) {
-    if (currentNumber === '') return; // Prevent setting operator without a number
+    if (currentNumber === '') return; //blocks opeerator settign without any number 
     if (previousNumber !== '') calculateResult();
     operator = op;
     previousNumber = currentNumber;
@@ -19,7 +18,7 @@ function setOperator(op) {
     updateDisplay();
 }
 
-// Perform the calculation
+// do the calculation
 function calculateResult() {
     if (previousNumber === '' || currentNumber === '' || operator === null) return;
 
@@ -38,7 +37,7 @@ function calculateResult() {
             result = num1 * num2;
             break;
         case '/':
-            result = num2 !== 0 ? num1 / num2 : 'Error'; // Prevent division by zero
+            result = num2 !== 0 ? num1 / num2 : 'Error'; // if division by 0, blocks
             break;
         default:
             return;
@@ -50,7 +49,7 @@ function calculateResult() {
     updateDisplay();
 }
 
-// Clear the calculator display
+// clears display
 function clearDisplay() {
     currentNumber = '';
     previousNumber = '';
@@ -58,7 +57,7 @@ function clearDisplay() {
     updateDisplay();
 }
 
-// Update the calculator display
+// update calculator display
 function updateDisplay() {
     const display = document.getElementById('calculator-display');
     display.value = currentNumber || previousNumber || '0';
