@@ -57,7 +57,7 @@ function textSpeech() {
 
 function fileTranslation(e) {
     const file = e.target.files[0];       // puts file in var file
-// yo need to write [0] cause files refers to the list of files from the input (idk why)
+// yo need to write [0] cause files refers to the list of files from the input (idk why, but there you go)
     if (!file) {
         alert("You did not upload any file.")};
     
