@@ -2,11 +2,11 @@ const passwordInput = document.getElementById('password-input');
 const passwordStrength = document.getElementById('password-strength');
 const togglePasswordButton = document.getElementById('toggle-password');
 
-// Function to evaluate password strength
+//function that evaluat  strength
 function evaluatePasswordStrength(password) {
     let strength = '';
 
-// Strength Criteria
+// trength criteria
 const baseLengthScore = password.length >= 10 ? 1 : 0; // Base point for reaching 10 characters
 const additionalLengthScore = Math.floor((password.length - 10) / 10); // Extra points for every 10 additional characters
 const totalLengthScore = baseLengthScore + (additionalLengthScore > 0 ? additionalLengthScore : 0); // Combine scores
@@ -19,7 +19,7 @@ const specialCharScore = /[!@#$%^&*(),.?":{}|<>]/.test(password) ? 1 : 0;
 const totalScore = totalLengthScore + lowerCaseScore + upperCaseScore + numberScore + specialCharScore;
 
 
-    // Evaluate strength based on score
+    // strength based onscore
     if (totalScore <= 1 || password.length < 6) {
         strength = 'Very Weak';
         passwordStrength.style.color = 'red';
@@ -33,13 +33,10 @@ const totalScore = totalLengthScore + lowerCaseScore + upperCaseScore + numberSc
         strength = 'Strong';
         passwordStrength.style.color = 'green';
     }
-
     return strength;
 }
-
-// Update password strength in the DOM
-passwordInput.addEventListener('input', () => {
-    const password = passwordInput.value;
+    //update password strength in DOM
+passwordInput.addEventListener('input', () => {const password = passwordInput.value;
     const strength = evaluatePasswordStrength(password);
 
     passwordStrength.textContent = `Password Strength: ${strength}`;
@@ -47,7 +44,7 @@ passwordInput.addEventListener('input', () => {
 });
 
 
-// Toggle password visibility
+// activate visibility
 togglePasswordButton.addEventListener('click', () => {
     if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
