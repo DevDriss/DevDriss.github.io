@@ -35,7 +35,7 @@ function copyText() {
 };
 
 
-// Speaker
+// speaker
 function textSpeech() {
     const textSpeaker = document.getElementById("translatedText").value;
     const langSpeaker = document.getElementById("targetLang").value;
