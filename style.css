@@ -76,7 +76,7 @@ header .logo {
 
 
 
-/* Hero */
+/* hero */
 .hero {
     text-align: center;
     padding: 70px 20px;
@@ -102,7 +102,7 @@ header .logo {
     animation: bounce 1.5s infinite;
 }
 
-/* Bounce Animation */
+/* bounceing Animation */
 @keyframes bounce {
     0%, 100% {
         transform: translateY(0);
@@ -117,11 +117,11 @@ header .logo {
 
 
 
-/* About */
+/* about section */
 .about {
     padding: 40px 20px;
     background-color: #0d1b2a;
-    color: #fff; /* Text color */
+    color: #fff;
     text-align: left;
 }
 
@@ -163,7 +163,7 @@ header .logo {
 
 
 
-/* Projects */
+/* Projects section*/
 .projects {
     padding: 50px 20px;
     background: transparent;
@@ -179,8 +179,6 @@ header .logo {
     background: transparent;
 
 }
-
-
 
 .project-card {
     position: relative;
@@ -230,14 +228,13 @@ header .logo {
 
 
 
-/* Project Detail */
+/* project Detail */
 .project-detail {
     padding: 50px 20px;
     text-align: center;
 }
 
-
-/* Footer styles */
+/* footer styles */
 footer {
     background-color: #2A3335;
     padding: 20px;
@@ -261,7 +258,7 @@ footer {
 
 
 
-/* Carousel */
+/* carousel */
 
 /* .gallery {
     padding: 1rem;
@@ -317,7 +314,7 @@ footer {
 
 
 
-/* Calculator Container */
+/* calculator container */
 .calculator {
     max-width: 300px;
     margin: 20px auto;
@@ -328,7 +325,7 @@ footer {
     text-align: center;
 }
 
-/* Calculator Display */
+/* calculator Display(new one)*/
 #calculator-display {
     width: 92%;
     height: 50px;
@@ -343,7 +340,7 @@ footer {
     padding: 10px;
 }
 
-/* Calculator Buttons */
+/* calculator bbuttons */
 .calculator-buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -368,7 +365,7 @@ footer {
 
 
 
-/* Snake game*/
+/* actual snake game*/
 #game-container {
     display: flex;
     flex-direction: column;
@@ -407,7 +404,7 @@ footer {
 
 
 
-/* Simple Password checker */
+/*  newpassword checker */
 #password-checker-container {
     text-align: center;
     margin: 20px auto;
@@ -433,7 +430,7 @@ footer {
     font-weight: bold;
 }
 
-/* Show button */
+/* show button af*/
 #toggle-password {
     border: none;
     background: none;
@@ -455,8 +452,7 @@ footer {
 
 
 
-/* Traductor */
-
+/* traductor */
 .code_request {
     background-color: #1f1f1f;
     
