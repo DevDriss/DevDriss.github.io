@@ -11,7 +11,7 @@ async function translating() {
         
         // log request§
         
-        console.log("=== MyMemory translation request ===");
+        console.log("=== myMemory translation request =----"); // to check for matching 
         console.log("input text:", input);
         console.log("source lang:", sourceLang || "auto-detect");
         console.log("target lang:", targetLang);
@@ -28,24 +28,23 @@ async function translating() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         
-        const jsonResponse = await response.json();
+        const jsonResponse = await response.json(); // does not print in HTML because raw JS.
         
 
-        console.log("=== MyMemory translation response ===");
+        console.log("----MyMemory translation response ----");
         console.log("full response:", jsonResponse);
         console.log("translated text:", jsonResponse.responseData.translatedText);
         console.log("-----------");
         
-
         document.getElementById("translatedText").innerHTML = jsonResponse.responseData.translatedText;
         
-        console.log("Translation successful:", jsonResponse.responseData.translatedText);
+        console.log("translation successful:", jsonResponse.responseData.translatedText);
         document.getElementById("code_response").innerHTML = JSON.stringify(jsonResponse);;
 
         
     } catch (error) {
-        console.error("Translation error:", error);
-        document.getElementById("translatedText").innerHTML = "Translation failed. Please try again.";
+        console.error("translation error:", error);
+        document.getElementById("translatedText").innerHTML = "translation failed, try again.";
     }
 }
 
