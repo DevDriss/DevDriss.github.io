@@ -20,7 +20,7 @@ function randomGridPosition() {
     let isOnSnake;
 
     do {
-        // generate random position
+        // generate radom position
         position = {
             x: Math.floor(Math.random() * (canvas.width / gridSize)) * gridSize,
             y: Math.floor(Math.random() * (canvas.height / gridSize)) * gridSize
