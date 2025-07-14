@@ -8,7 +8,8 @@ function appendNumber(number) {
     updateDisplay();
 }
 
-//set operator for calculation, af
+//set operator for calculation
+
 function setOperator(op) {
     if (currentNumber === '') return; //blocks opeerator settign without any number 
     if (previousNumber !== '') calculateResult();
