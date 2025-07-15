@@ -11,7 +11,7 @@ function appendNumber(number) {
 //set operator for calculation
 
 function setOperator(op) {
-    if (currentNumber === '') return; //blocks opeerator settign without any number 
+    if (currentNumber === '') return; //blocks opeerator settign without any  number 
     if (previousNumber !== '') calculateResult();
     operator = op;
     previousNumber = currentNumber;
